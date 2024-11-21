@@ -4,16 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ROEZ JOYERIA</title>
+    <!-- NORMALIZE -->
     <link rel="stylesheet" href="/public/css/normalize.css" />
+    <!--Icon-Font-->
+    <script
+      src="https://kit.fontawesome.com/bf208e9523.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Staatliches&display=swap"
       rel="stylesheet"
     />
+    <!-- STYLES PROYECTO -->
     <link rel="stylesheet" href="/public/css/style.css" />
   </head>
   <body>
+    <!-- BOTON WHATSAPP -->
+
+    <a
+      href="https://api.whatsapp.com/send?phone=+50660170670"
+      class="btn-wsp"
+      target="_blank"
+    >
+      <i class="fa fa-whatsapp icono"></i>
+    </a>
+
     <header class="header">
       <div class="barra-superior">
         <ul class="barra-superior__menu no-margin">
@@ -150,12 +168,92 @@
 
     <section class="portada">
       <div class="portada__texto">
-        <h2 class="no-margin">Joyeria y accesorios</h2>
-        <p class="no-margin">Tu opción perfecta para brillar</p>
+        <h2 class="no-margin portada__titulo">Joyeria y accesorios</h2>
+        <p class="no-margin portada__subtitulo">
+          Tu opcion perfecta para brillar
+        </p>
         <div class="portada__boton">
-          <a href="" class="btn__principal"><button >TENDENCIAS</button></a>
+          <a href=""><button class="btn__principal">Tendencias</button></a>
+          <p class="no-margin seguidores">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="28"
+              height="28"
+              color="#ffffff"
+              fill="none"
+            >
+              <path
+                d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16.5 12C16.5 14.4853 14.4853 16.5 12 16.5C9.51472 16.5 7.5 14.4853 7.5 12C7.5 9.51472 9.51472 7.5 12 7.5C14.4853 7.5 16.5 9.51472 16.5 12Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M17.5078 6.5L17.4988 6.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            +370 seguidores
+          </p>
         </div>
-    </div>
+      </div>
     </section>
+    <main class="main">
+      <div class="diviciones">
+        <h1 class="secciones__titulos__texto"></h1>
+      </div>
+      <section class="productos">
+        <div class="productos__cartas promociones">
+          <img
+            src="/public/img/1_e105e980-8f2c-4881-b79e-8f5854db9828.webp"
+            alt=""
+            class="producto__imagen"
+          />
+          <div class="productos__detalles">
+            <p class="productos__nombre">Collar corazón</p>
+            <p class="productos__precio">$99.99</p>
+          </div>
+          <button class="productos__btnComprar">Comprar ahora</button>
+        </div>
+        <!-- FINAL ARTICLE -->
+
+        <div class="productos__cartas promociones">
+          <img
+            src="/public/img/1_e105e980-8f2c-4881-b79e-8f5854db9828.webp"
+            alt=""
+            class="producto__imagen"
+          />
+          <div class="productos__detalles">
+            <p class="productos__nombre">Collar corazón</p>
+            <p class="productos__precio">$99.99</p>
+          </div>
+          <button class="productos__btnComprar">Comprar ahora</button>
+        </div>
+        <!-- FINAL ARTICLE -->
+
+        <div class="productos__cartas promociones">
+          <img
+            src="/public/img/1_e105e980-8f2c-4881-b79e-8f5854db9828.webp"
+            alt=""
+            class="producto__imagen"
+          />
+          <div class="productos__detalles">
+            <p class="productos__nombre">Collar corazón</p>
+            <p class="productos__precio">$99.99</p>
+          </div>
+          <button class="productos__btnComprar">Comprar ahora</button>
+        </div>
+        <!-- FINAL ARTICLE -->
+      </section>
+    </main>
   </body>
 </html>
