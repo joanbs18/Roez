@@ -41,7 +41,8 @@ a {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-family: var(--fuenteHeading);
   line-height: 1.2;
 }
@@ -56,6 +57,9 @@ h3 {
 }
 h4 {
   font-size: 2.8rem;
+}
+h5 {
+  font-size: 1.5rem;
 }
 
 img {
@@ -268,6 +272,11 @@ img {
   transition: 0.4s ease-in-out;
 }
 
+.rosa {
+  color: var(--color_rosa);
+  border: 1px solid var(--color_rosa);
+}
+
 .btn__principal:hover {
   background-color: var(--blanco);
   color: var(--color_rosa);
@@ -285,6 +294,7 @@ img {
   max-width: 120rem;
   width: 100%;
   margin: auto;
+  border: 1px solid red;
 }
 
 .productos {
@@ -292,12 +302,26 @@ img {
   grid-template-columns: repeat(1, 1fr);
   place-items: center;
   gap: 2rem;
+  margin-top: 3rem;
 }
 
 .promociones:before {
   content: "15% OFF";
   background: var(--color_rosa);
-  padding: .5rem;
+  padding: 0.5rem;
+  width: 8rem;
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  transform: rotate(90deg);
+  color: var(--blanco);
+  text-align: center;
+}
+
+.nuevo:before {
+  content: "New";
+  background: var(--color_rosa);
+  padding: 0.5rem;
   width: 8rem;
   position: absolute;
   top: 2rem;
@@ -325,8 +349,6 @@ img {
   transition: 0.4s ease-out;
 }
 
-
-
 .producto__imagen {
   object-fit: cover;
   height: 30rem;
@@ -350,11 +372,149 @@ img {
   transition: 0.5s;
   padding: 1rem;
   cursor: pointer;
- 
 }
 
 .productos__cartas:hover .productos__btnComprar {
   opacity: 1;
   transform: translateY(0);
+}
 
+/* BUTTON PARA DIVICIONES DE SECCIOES */
+
+.divicion {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.divicion__titulos__texto {
+  font-size: 5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* TENDENCIAS */
+
+.tendecias {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tendecias {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tendecias__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.tendecias__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 98.5%;
+  background-color: #8c0c4649;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.tendecias__card .tendecia__imagen {
+  transition: transform 0.3s ease;
+}
+
+.tendecias__card:hover .tendecia__imagen {
+  transform: scale(1.1) translate(-5%, -5%);
+}
+
+.tendecias__card:hover::before {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.tendecia__titulo {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  color: var(--blanco);
+  text-align: center;
+  z-index: 2;
+}
+
+.sobre {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 8rem;
+  place-items: center;
+}
+
+@media (min-width: 768px) {
+  .sobre {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sobre__caja {
+  color: var(--texto);
+  max-width: 90%;
+}
+
+.sobre__texto {
+  text-align: justify;
+}
+
+.preguntas {
+  background-color: var(--color_rosa);
+  color: var(--blanco);
+  margin-top: 5rem
+}
+
+.preguntas__contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  place-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.preguntas__titulo {
+  padding: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-left: 2rem;
+}
+
+.preguntas__imagen {
+  height: 40rem;
+  width: 40rem;
+  object-fit: cover;
+}
+
+.preguntas__imagen__logo {
+  height: 10rem;
+}
+
+@media (min-width: 768px) {
+  .preguntas__contenedor {
+    grid-template-columns: 2fr 1fr 2fr;
+  }
+
+  .preguntas__logo {
+    transform: rotate(90deg);
+  }
+
+  .preguntas__imagen__logo {
+    height: auto;
+  }
+}
+.preguntas__texto{
+  font-weight: 400;
 }
