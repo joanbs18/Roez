@@ -22,6 +22,8 @@
     />
     <!-- STYLES PROYECTO -->
     <link rel="stylesheet" href="/public/css/style.css" />
+
+    <link rel="shortcut icon" href="/public/img/Logo Roez SIN FONDO_Principal (3).png" type="image/x-icon">
   </head>
   <body>
     <!-- BOTON WHATSAPP -->
@@ -120,7 +122,7 @@
               width="28"
               height="28"
               color="#ffffff"
-              fill="none"
+              fill="none" data-btn-action="add-btn-cart" data-modal="#jsModalCarrito"
             >
               <path
                 d="M3.87289 17.0194L2.66933 9.83981C2.48735 8.75428 2.39637 8.21152 2.68773 7.85576C2.9791 7.5 3.51461 7.5 4.58564 7.5H19.4144C20.4854 7.5 21.0209 7.5 21.3123 7.85576C21.6036 8.21152 21.5126 8.75428 21.3307 9.83981L20.1271 17.0194C19.7282 19.3991 19.5287 20.5889 18.7143 21.2945C17.9 22 16.726 22 14.3782 22H9.62182C7.27396 22 6.10003 22 5.28565 21.2945C4.47127 20.5889 4.27181 19.3991 3.87289 17.0194Z"
@@ -132,6 +134,8 @@
                 stroke="currentColor"
                 stroke-width="1.5"
               />
+
+
             </svg>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +225,7 @@
             <p class="productos__nombre">Collar corazón</p>
             <p class="productos__precio">$99.99</p>
           </div>
-          <button class="productos__btnComprar">Comprar ahora</button>
+          <button class="productos__btnComprar" data-btn-action="add-btn-cart" data-modal="#jsModalCarrito">Comprar ahora</button>
         </div>
         <!-- FINAL ARTICLE -->
 
@@ -260,7 +264,7 @@
       </div>
 
       <div class="divicion">
-        <h1 class="divicion__titulos__texto" data-aos="fade-up">Tendecias</h1>
+        <h1 class="divicion__titulos__texto" data-aos="fade-up">Tendencias</h1>
       </div>
 
       <section class="tendecias">
@@ -444,9 +448,95 @@
         </div>
       </section>
     </main>
+
+ <!--MODAL CARRITO-->
+ <div class="modal" id="jsModalCarrito">
+  <div class="modal__container">
+      <button type="button" class="modal__close fa-solid fa-xmark jsModalClose "></button>
+
+      <div class="modal__info">
+          <div class="modal__header">
+              <h2><i class="fa-brands fa-opencart"></i>Carrito</h2>
+          </div>
+
+          <div class="modal__body">
+              <div class="modal__list">
+                
+
+                  <div class="modal__item">
+                      <div class="modal__thumb">
+                          <img src="/public/img/1_e105e980-8f2c-4881-b79e-8f5854db9828.webp" alt="Naranja">
+                      </div>
+                      <div class="modal__text-product">
+                          <p>Collar Corazón</p>
+                          <p><strong>$99.99</strong></p>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <div class="modal__footer">
+              <div class="modal__list-price">
+                  <ul>
+                      <li>Subtotal: <strong>$10.00</strong></li>
+                      <li>Descuento: <strong>$0.00</strong></li>
+                  </ul>
+                  <h4 class="modal__total-cart"> Total: $89.99</h4>
+              </div>
+
+              <div class="modal__btns">
+                  <a href="#" class="btn-border">Ir al carrito</a>
+                  <a href="#" class="btn-primary">Comprar Ahora</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
+
+    
+
+  const addToCart = document.querySelectorAll('[data-btn-action="add-btn-cart"]');
+
+const closeModal = document.querySelector('.jsModalClose');
+
+addToCart.forEach(btn => {
+
+  btn.addEventListener('click', (event) => {
+
+    const nameModal = event.target.getAttribute('data-modal');
+
+    const modal = document.querySelector(nameModal);
+
+    //abrimos el modal
+    modal.classList.add('active');
+    document.body.classList.add("modal-activo");
+  })
+
+});
+
+//CERRAR EL MODAL
+closeModal.addEventListener('click', (event) => {
+  event.target.parentNode.parentNode.classList.remove('active');
+  document.body.classList.remove("modal-activo");
+})
+
+window.onclick = (event) => {
+  const modal = document.querySelector('.modal.active');
+
+  if (event.target == modal) {
+    modal.classList.remove('active');
+    document.body.classList.remove("modal-activo");
+  }
+}
 </script>
   </body>
 </html>
